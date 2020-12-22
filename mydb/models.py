@@ -14,15 +14,16 @@ class Account(models.Model):  # this will handle the Website Name and URL
     topic = models.ForeignKey(Topic, on_delete=models.DO_NOTHING)  # Service in database
     Email = models.CharField(max_length=100)  # Email in database
     website_name = models.CharField(max_length=100)  # website_name in database
-    url = models.URLField(unique=True)  # website in database
+    url = models.URLField(unique=False)  # website in database
     password = models.CharField(max_length=100)
     userName = models.CharField(max_length=100)
+    comment = models.CharField(max_length=1500)
     Name = models.CharField(max_length=100)
     Address = models.CharField(max_length=250)  # Address in database
     Phone_Number = models.CharField(max_length=25)  # Phone Number in database
 
     def __str__(self):
-        return self.website_name
+        return self.url
 
 
 class AccessRecord(models.Model):
