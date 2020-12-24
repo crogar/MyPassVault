@@ -9,7 +9,7 @@
   overflow: hidden;
 }
 
-.container:after{
+.container{
  content: '';
  width: 300px;
  height: 300px;
