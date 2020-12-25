@@ -1,6 +1,12 @@
+body {
+margin-top: 80px;
+padding: 0;
+}
+
 h1, h2{
     color: #2E86C1;
 }
+
 .content-table {
     border-collapse: collapse;
     margin: 25px 0;
@@ -42,4 +48,11 @@ h1, h2{
 
 .content-table tbody tr:last-of-type(even){
     border-bottom: 2px solid #009879;
+}
+
+.djangolist {
+  resize: both;
+  overflow: auto;
+  height: 100%;
+  width: 100%;
 }
