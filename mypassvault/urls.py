@@ -16,8 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url, include
+from mydb.views import users
 
 urlpatterns = [
     url('passwords/', include('mydb.urls')),
     path('admin/', admin.site.urls),
+    url('user', users, name='users'),
 ]

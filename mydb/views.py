@@ -31,3 +31,12 @@ def form_name_view(request):
 
     return render(request, 'mydb/form.html', context={'form': form})
 
+
+##########################################################################
+# View that handles request to See user.html                             #
+##########################################################################
+
+
+def users(request):
+    # passwords = {"accounts": accounts_list}
+    return render(request, 'mydb/user.html')
