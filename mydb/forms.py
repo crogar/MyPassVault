@@ -28,3 +28,15 @@ class NewUserForm(forms.ModelForm):
     class Meta:
         model = User
         fields = '__all__'
+
+    def clean_user(self):
+        _user = self.cleaned_data['user_name']
+        # Check to see if any users already exist with this email as a username.
+        try:
+            match = User.objects.get(user_name=_user)
+        except User.DoesNotExist:
+            # Unable to find a user, this is fine
+            return _user
+
+        # A user was found with this as a username, raise an error.
+        raise forms.ValidationError('This Username is already in use.')

@@ -8,6 +8,11 @@
 <body>
     <div class="container">
         <h1 align="center">Please Sign up here!</h1>
+        <form method="post">
+            {{form.as_p}}
+            {% csrf_token %}
+            <input type="submit" class="btn btn-primary" value="Submit">
+        </form>
     </div>
 </body>
 </html>

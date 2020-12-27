@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http.request import HttpRequest
 from mydb.models import Account
 from mydb.forms import NewUserForm
-
+from mydb import forms
 
 # Create your views here.
 
@@ -36,12 +36,20 @@ def form_name_view(request):
 # View that handles request to See signup.html                           #
 ##########################################################################
 
-def sign_up(request):
-    return render(request, 'mydb/signup.html')
-
 
 def users_(request):
     # passwords = {"accounts": accounts_list}
     return render(request, 'mydb/index.html')
 
 
+def sign_up(request):
+    form = NewUserForm()
+
+    if request.method == 'POST':
+        form = NewUserForm(request.POST)
+        if form.is_valid():
+            form.save(commit=True)
+            return users_(request)
+        else:
+            raise forms.forms.ValidationError("Something Went Wrong, please try again!")
+    return render(request, 'mydb/signup.html', {'form': form})
