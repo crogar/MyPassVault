@@ -20,6 +20,10 @@ header h1 {
   color: white;
 }
 
+.content-table {
+    border: 1px solid;
+}
+
 .divider {
   position: absolute;
   bottom: 0;
@@ -38,7 +42,7 @@ h1, h2{
     border-collapse: collapse;
     margin: 25px 0;
     font-size: 0.9em;
-    min-width: 400px;
+    min-width: 600px;
 }
 
 .content-table thead tr th{
@@ -70,16 +74,17 @@ h1, h2{
 }
 
 .content-table tbody tr:nth-of-type(even){
-    background-color: rgb(192, 192, 192, 0.20);
+    background-color: rgb(192, 192, 192, 0.35);
 }
 
-.content-table tbody tr:last-of-type(even){
+.content-table tbody tr:last-of-type {
     border-bottom: 2px solid #009879;
 }
 
 .djangolist {
-  resize: both;
   overflow: auto;
   height: 100%;
   width: 100%;
+  border: 1px solid;
 }
+

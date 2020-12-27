@@ -32,3 +32,13 @@ class AccessRecord(models.Model):
 
     def __str__(self):
         return str(self.date)
+
+
+##########################################################################
+# Creating User Model                                                    #
+##########################################################################
+
+class User(models.Model):
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+    email = models.CharField(max_length=100)
