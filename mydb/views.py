@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http.request import HttpRequest
 from mydb.models import Account
-from mydb import forms
+from mydb.forms import NewUserForm
 
 
 # Create your views here.
@@ -33,10 +33,15 @@ def form_name_view(request):
 
 
 ##########################################################################
-# View that handles request to See user.html                             #
+# View that handles request to See signup.html                           #
 ##########################################################################
 
+def sign_up(request):
+    return render(request, 'mydb/signup.html')
 
-def users(request):
+
+def users_(request):
     # passwords = {"accounts": accounts_list}
-    return render(request, 'mydb/user.html')
+    return render(request, 'mydb/index.html')
+
+

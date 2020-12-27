@@ -1,5 +1,6 @@
 from django import forms
 from django.core import validators
+from mydb.models import User
 
 
 class FormName(forms.Form):
@@ -19,3 +20,11 @@ class FormName(forms.Form):
             raise forms.ValidationError("E-mails don't match")
 
 
+##########################################################################
+# Form for Sign up Page! mydb/signup.html                                #
+##########################################################################
+
+class NewUserForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = '__all__'
