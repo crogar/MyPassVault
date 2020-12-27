@@ -51,5 +51,5 @@ def sign_up(request):
             form.save(commit=True)
             return users_(request)
         else:
-            raise forms.forms.ValidationError("Something Went Wrong, please try again!")
+            print("Something went wrong!")
     return render(request, 'mydb/signup.html', {'form': form})

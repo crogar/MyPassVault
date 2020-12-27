@@ -1,0 +1,26 @@
+.container{
+    border: 1px solid
+
+}
+.container-shadow{
+    border: 1px green solid;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    padding-bottom: 60%;
+}
+
+.myform{
+    border: 1px red solid;
+    padding: 20px 20px 40px 40px;
+    margin-left: 5%;
+    margin-top: 15%;
+    width: 45%;
+    float: left;
+}
+
+#container-small{
+    border: 1px solid;
+    margin-top: 10%;
+    margin-left: 5%;
+    float: left
+}
