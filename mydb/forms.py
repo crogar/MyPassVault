@@ -28,6 +28,12 @@ class NewUserForm(forms.ModelForm):
     class Meta:
         model = User
         fields = '__all__'
+        widgets = {
+            'user_name': forms.TextInput(attrs={'class': 'form-control'}),
+            'first_name': forms.TextInput(attrs={'class': 'form-control'}),
+            'last_name': forms.TextInput(attrs={'class': 'form-control'}),
+            'email': forms.TextInput(attrs={'class': 'form-control', 'placeholder':'email@example.com'}),
+        }
 
     def clean(self):
         all_clean_data = super().clean()

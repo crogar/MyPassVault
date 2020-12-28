@@ -10,32 +10,32 @@ body{
     border-radius: 13px;
     box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.07);
     background-color: #D1D8F2;
-    width: 65%;
+    width: 80%;
     margin-top: 135px;
 	align-items: center;
 	padding-top: 1px;
-	padding-left: 50px;
-	padding-right: 50px;
-	min-height:80vh;
+	min-height: 60vh;
+	padding: 35px 35px 80px 35px;
+
 }
 
 .container-shadow{
     border-radius: 13px;
+    display: inline-block;
     box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.2);
     background-color: white;
     display: flex;
     justify-content: space-around;
     align-items: center;
     margin-top: 10%;
-    min-height:60vh;
     margin-bottom: 10%;
     padding: 80px 80px 80px 80px;
-
 }
 
 .myform{
     flex:1;
-    margin-left: 15px;
+    padding-right:35px;
+    margin-right: 5%;
 }
 
 .cta-register{
@@ -57,7 +57,6 @@ body{
     background-color: #abcbdf;
     border-radius: 3px;
     margin-bottom: 10px;
-    float: left
 }
 
 .introduction{
