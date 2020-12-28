@@ -5,25 +5,37 @@
     <meta charset="UTF-8">
     <title>User site</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static "css/sign_up_style.css" %}">
+    <link rel="stylesheet" href="{% static "css/sign_up_styles.css" %}">
 </head>
 <body>
-    <div class="container">
-        <h1 align="center">Please Sign up here!</h1>
-        <div class="container-shadow">
-            <form class="myform" method="post">
-            {{form.as_p}}
-            {% csrf_token %}
-            <input type="submit" class="btn btn-primary" value="Submit">
+    <main>
+<!--        <h1 align="center">Please Sign up here!</h1>-->
 
-            </form>
+        <section class="container">
 
-            <div id="container-small">
-                  <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pexels.com%2Fsearch%2Fworld%2F&psig=AOvVaw2AE0f8NWc8UKrDHQ5iD5GY&ust=1609178323276000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCIDLlcLe7u0CFQAAAAAdAAAAABAD" style="width:500px;height:600px;">
-            </div>
+            <div class="container-shadow">
+                <form class="myform" method="post">
+                {{form.as_p}}
+                {% csrf_token %}
+                <input type="submit" class="cta-register" value="Register">
 
+                </form>
 
-        </div>
-    </div>
+                <div class="container-small">
+                    <div class="introduction">
+                        <div class="intro-text">
+                            <h1>Why register?</h1>
+                            <p>
+                                In MyVault we believe that the only person that should have access to your
+                                most valued information and privacy is YOU and only YOU!
+                            </p>
+                         </div>
+                          <div class="cover">
+                              <center><img src="https://i.ibb.co/YDn68QT/g995.png" alt="g995" border="0"></center>
+                          </div>
+                     </div>
+                </div>
+         </section>
+    </main>
 </body>
 </html>
