@@ -30,6 +30,7 @@ class NewUserForm(forms.ModelForm):
         fields = '__all__'
         widgets = {
             'user_name': forms.TextInput(attrs={'class': 'form-control'}),
+            'password': forms.TextInput(attrs={'class': 'form-control','type' : 'password'}),
             'first_name': forms.TextInput(attrs={'class': 'form-control'}),
             'last_name': forms.TextInput(attrs={'class': 'form-control'}),
             'email': forms.TextInput(attrs={'class': 'form-control', 'placeholder':'email@example.com'}),

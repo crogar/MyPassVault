@@ -9,6 +9,7 @@ body{
 	padding:0;
 	box-sizing:border-box;
 	background-image: url("https://i.ibb.co/bKfTM8v/cool-background-1.png");
+	color: #5f5f79;
 }
 
 
@@ -38,6 +39,7 @@ body{
     margin-top: 4%;
     margin-bottom: 0%;
     padding: 4.5% 80px 0 80px;
+    animation: drop 1.5s ease;
 }
 .cta{
     padding-top: 17%;
@@ -55,7 +57,8 @@ nav{
 }
 .logo-container{
     display: flex;
-flex:1;
+    flex:1;
+    align-items: center;
 }
 
 .nav-links{
@@ -68,6 +71,12 @@ flex:1;
 .nav-link{
     text-decoration: none;
     flex:1;
+    color: #5f5f79;
+}
+
+a {
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
 }
 
 .myform{
@@ -79,7 +88,7 @@ flex:1;
 .cta-register{
 	border: 2px solid #c36cbb;
 		border-radius: 5px;
-	background: #B558FE;
+	background: #B558FE;wds
 	box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.1);
 	width:200px;
 	height: 50px;
@@ -92,7 +101,7 @@ flex:1;
 .container-small{
     flex:1;
     box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.1);
-    background-color: #abcbdf;
+    background-color: rgba(160, 108, 213, 0.25);
     border-radius: 3px;
     margin-bottom: 10px;
 }
