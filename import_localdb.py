@@ -50,7 +50,6 @@ def populate_db(dt):
             else:
                 aux.append(x[i])
 
-
         # Getting data from the list
         email = aux[1]
         username = aux[2]

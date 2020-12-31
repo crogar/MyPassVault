@@ -18,9 +18,9 @@ from django.urls import path
 from django.conf.urls import url, include
 from mydb.views import users_, sign_up
 
+app_name = 'main'
+
 urlpatterns = [
-    url('passwords/', include('mydb.urls')),
+    url('myvault/', include('mydb.urls')),
     path('admin/', admin.site.urls),
-    url('user', users_, name='index_urls'),
-    url('signup', sign_up, name='signup'),
 ]

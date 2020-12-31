@@ -1,3 +1,7 @@
+/* for color style refer to this color palette
+https://coolors.co/e2cfea-a06cd5-6247aa-102b3f-062726
+*/
+
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 
 *{
@@ -16,7 +20,7 @@ body{
 .container{
     border-radius: 13px;
     box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.07);
-    background-color: #D1D8F2;
+    background-color: #102b3f;
     display: flex;
     width: 100%;
     margin-top: 3%;
@@ -32,7 +36,7 @@ body{
     border-radius: 13px;
     display: inline-block;
     box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.2);
-    background-color: white;
+    background-color: whitesmoke;
     justify-content: space-around;
     align-items: center;
     min-height: 80vh;
@@ -86,9 +90,8 @@ a {
 }
 
 .cta-register{
-	border: 2px solid #c36cbb;
-		border-radius: 5px;
-	background: #B558FE;wds
+	border-radius: 5px;
+	background: rgba(98, 71, 170, 1.0);
 	box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.1);
 	width:200px;
 	height: 50px;
@@ -100,8 +103,8 @@ a {
 
 .container-small{
     flex:1;
-    box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.1);
-    background-color: rgba(160, 108, 213, 0.25);
+    box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.2);
+    background-color: rgba(6, 39, 38, 0.10);
     border-radius: 3px;
     margin-bottom: 10px;
 }
