@@ -21,7 +21,7 @@ header h1 {
 }
 
 .content-table {
-    border: 1px solid;
+
 }
 
 .divider {
@@ -46,7 +46,7 @@ h1, h2{
 }
 
 .content-table thead tr th{
-    background-color: #2E86C1;
+    background-color: rgba(16, 43, 63, 0.9);
     color: #ffffff;
     text-align: left;
     font-weight: bold;
@@ -85,6 +85,6 @@ h1, h2{
   overflow: auto;
   height: 100%;
   width: 100%;
-  border: 1px solid;
+  /*border: 1px solid;*/
 }
 

@@ -1,26 +1,20 @@
 <!DOCTYPE html>
-{%load static%}
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+
+{% extends "mydb/base.html"%}
+    {%load static%}
+    {%block body_block%}
+    <style>
+        .container{
+            width=87%;
+        }
+    </style>
     <title>MyVault</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static "css/account_styles.css" %}">
-<!--    <link rel="stylesheet" href="{% static "css/css_styling.css" %}">-->
-</head>
-<body>
-    <div class="header">
-         <header>
-  <h1>MyPassVault v1.0</h1>
-  <img src="https://assets.codepen.io/t-517/divider-triangle.png" class="divider" />
-</header>
-
-    <section>
+    <link rel="stylesheet" href="{% static "css/account_style.css" %}">
+   <section>
       <h1>MyVault</h1>
     </section>
-
-    </div>
 
     <div class="container-fluid">
         <div class="djangolist" align="center">
@@ -51,5 +45,15 @@
 
     </div>
     </div>
-</body>
-</html>
+    {%endblock%}
+
+
+
+
+
+
+
+
+
+
+
