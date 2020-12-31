@@ -98,16 +98,15 @@ a {
 	cursor: pointer;
 	font-size: 16px;
 	color: white;
-	margin: 10px 0px 0px 30px;
+	margin: 25px 0px 0px 30px;
 }
 
 .container-small{
     flex:1;
-    box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.12);
     background-color: rgba(6, 39, 38, 0.10);
     border-radius: 3px;
     margin-bottom: 10px;
-    margin-bottom: 2%;
 }
 
 .introduction{
