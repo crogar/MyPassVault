@@ -1,7 +1,7 @@
 from django import forms
 from django.core import validators
-from mydb.models import User
-
+from django.contrib.auth.models import User
+from mydb.models import UserProfileInfo
 
 class FormName(forms.Form):
     name = forms.CharField()
@@ -30,10 +30,10 @@ class NewUserForm(forms.ModelForm):
         fields = '__all__'
         widgets = {
             'user_name': forms.TextInput(attrs={'class': 'form-control'}),
-            'password': forms.TextInput(attrs={'class': 'form-control','type' : 'password'}),
+            'password': forms.TextInput(attrs={'class': 'form-control', 'type': 'password'}),
             'first_name': forms.TextInput(attrs={'class': 'form-control'}),
             'last_name': forms.TextInput(attrs={'class': 'form-control'}),
-            'email': forms.TextInput(attrs={'class': 'form-control', 'placeholder':'email@example.com'}),
+            'email': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'email@example.com'}),
         }
 
     def clean(self):
@@ -49,3 +49,21 @@ class NewUserForm(forms.ModelForm):
         except User.DoesNotExist:
             # Unable to find a user, this is fine
             pass
+
+
+####################################################################################
+# Form for Sign up Page! mydb/signup.html  using django.user.auth built in manager #
+####################################################################################
+
+class UserForm(forms.ModelForm):
+    password = forms.CharField(widget=forms.PasswordInput())
+
+    class Meta:
+        fields = ('username', 'password', 'email', 'name', 'surname')
+
+
+class UserProfileInfoForm(forms.ModelForm):
+    class Meta:
+        model = UserProfileInfo
+        fields = ('portfolio_site', 'profile_pic')
+

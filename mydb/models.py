@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 # Create your models here.
@@ -38,12 +39,15 @@ class AccessRecord(models.Model):
 # Creating User Model                                                    #
 ##########################################################################
 
-class User(models.Model):
-    user_name = models.CharField(max_length=50)
-    password = models.CharField(max_length=50)
-    first_name = models.CharField(max_length=100)
-    last_name = models.CharField(max_length=100)
-    email = models.CharField(max_length=100)
+class UserProfileInfo(models.Model):
+    user = models.OneToOneField(User, on_delete=models.DO_NOTHING)
+    portfolio_site = models.URLField(blank=True)
+    profile_pic = models.ImageField(upload_to='profile_pics', blank=True)
 
     def __str__(self):
-        return str(self.user_name)
+        return self.user.username
+
+
+##########################################################################
+# Creating User Model                                                    #
+##########################################################################
