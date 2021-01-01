@@ -37,7 +37,7 @@ body{
     border-radius: 13px;
     display: inline-block;
     box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.2);
-    background-color: whitesmoke;
+    background-color: white;
     justify-content: space-around;
     align-items: center;
     min-height: 80vh;

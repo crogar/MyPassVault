@@ -40,7 +40,7 @@ class AccessRecord(models.Model):
 ##########################################################################
 
 class UserProfileInfo(models.Model):
-    user = models.OneToOneField(User, on_delete=models.DO_NOTHING)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     portfolio_site = models.URLField(blank=True)
     profile_pic = models.ImageField(upload_to='profile_pics', blank=True)
 
