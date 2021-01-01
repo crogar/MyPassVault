@@ -1,8 +1,9 @@
 from django.shortcuts import render
 from django.http.request import HttpRequest
 from mydb.models import Account
-from mydb.forms import NewUserForm
+from mydb.forms import UserProfileInfoForm, UserForm
 from mydb import forms
+
 
 # Create your views here.
 
@@ -42,14 +43,34 @@ def users_(request):
     return render(request, 'mydb/index.html')
 
 
-def sign_up(request):
-    form = NewUserForm()
+def register(request):
+    registered = False
 
     if request.method == 'POST':
-        form = NewUserForm(request.POST)
-        if form.is_valid():
-            form.save(commit=True)
-            return users_(request)
+        user_form = UserForm(data=request.POST)
+        profile_form = UserProfileInfoForm(data=request.POST)
+
+        if user_form.is_valid() and profile_form.is_valid():
+            user = user_form.save()
+            user.set_password(user.password)
+            user.save()
+
+            profile = profile_form.save(commit=False)
+            profile.user = user
+
+            if 'profile_pic' in request.FILES:
+                profile.profile_pic = request.FILES['profile_pic']
+
+            profile.save()
+
+            registered = True
         else:
-            print("Something went wrong!")
-    return render(request, 'mydb/signup.html', {'form': form})
+            print(user_form.errors, profile_form.errors)
+    else:
+        user_form = UserForm()
+        profile_form = UserProfileInfoForm()
+
+    return render(request, 'mydb/signup.html',
+                  context={'user_form': user_form,
+                           'profile_form': profile_form,
+                           'registered': registered})

@@ -30,33 +30,43 @@
 			        </nav>
                 </div>
                 <div class="cta">
-                        <form class="myform" method="post">
-                        <h2>Register As a Myvault User</h2>
-                    {{form.as_p}}
-                    {% csrf_token %}
-                    <input type="submit" class="cta-register" value="Register">
 
-                    </form>
 
-                    <div class="container-small">
-                        <div class="introduction">
-                            <div class="intro-text">
-                                <h1>Why register?</h1>
-                                <p>
-                                    At MyVault we believe that the only person that should have access to your
-                                    most valued information and privacy is YOU and only YOU!
-                                </p>
-                                <p>
-                                    All your information is password encrypted and only you will be able to access this
-                                    Website.
-                                </p>
-                             </div>
-                              <div class="cover">
+                        {% if registered%}
+                            <h1> Thank you for registering!</h1>
 
-                                  <center><img src="https://i.ibb.co/W5qjXpW/world.png" alt="world" border="0"></center>
-                              </div>
-                         </div>
-                    </div>
+                        {%else%}
+
+                            <form class="myform" enctype="multipart/form-data" method="post">
+                                <h2>Register As a Myvault User</h2>
+                                {{user_form.as_p}}
+                                {{profile_form.as_p}}
+                                {% csrf_token %}
+                                <input type="submit" class="cta-register" value="Register">
+                            </form>
+
+                            <div class="container-small">
+                                <div class="introduction">
+                                    <div class="intro-text">
+                                        <h1>Why register?</h1>
+                                        <p>
+                                            At MyVault we believe that the only person that should have access to your
+                                            most valued information and privacy is YOU and only YOU!
+                                        </p>
+                                        <p>
+                                            All your information is password encrypted and only you will be able to access this
+                                            Website.
+                                        </p>
+                                     </div>
+                                      <div class="cover">
+
+                                          <center><img src="https://i.ibb.co/W5qjXpW/world.png" alt="world" border="0"></center>
+                                      </div>
+                                 </div>
+                            </div>
+                        {%endif%}
+
+
                 </div>
 
             </div>

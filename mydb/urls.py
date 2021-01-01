@@ -8,5 +8,5 @@ urlpatterns = [
     url('accounts', views.vault, name='vault'),
     url('formpage', views.form_name_view, name='form_name'),
     url('user', views.users_, name='index_urls'),
-    url('signup', views.sign_up, name='signup'),
+    url('signup', views.register, name='signup'),
 ]

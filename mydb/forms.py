@@ -3,6 +3,7 @@ from django.core import validators
 from django.contrib.auth.models import User
 from mydb.models import UserProfileInfo
 
+
 class FormName(forms.Form):
     name = forms.CharField()
     email = forms.EmailField()
@@ -59,11 +60,11 @@ class UserForm(forms.ModelForm):
     password = forms.CharField(widget=forms.PasswordInput())
 
     class Meta:
-        fields = ('username', 'password', 'email', 'name', 'surname')
+        model = User
+        fields = ('username', 'password', 'email')
 
 
 class UserProfileInfoForm(forms.ModelForm):
     class Meta:
         model = UserProfileInfo
         fields = ('portfolio_site', 'profile_pic')
-
