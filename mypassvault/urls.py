@@ -16,11 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url, include
+from mydb import views
 
-
-app_name = 'main'
 
 urlpatterns = [
     url('myvault/', include('mydb.urls')),
+    url(r'^$', views.user_login, name='login'),
     path('admin/', admin.site.urls),
 ]

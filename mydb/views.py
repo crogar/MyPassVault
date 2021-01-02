@@ -1,8 +1,13 @@
 from django.shortcuts import render
 from django.http.request import HttpRequest
 from mydb.models import Account
-from mydb.forms import UserProfileInfoForm, UserForm
 from mydb import forms
+from mydb.forms import UserProfileInfoForm, UserForm
+
+from django.urls import reverse
+from django.contrib.auth.decorators import login_required
+from django.http import HttpResponsePermanentRedirect, HttpResponse
+from django.contrib.auth import authenticate, login, logout
 
 
 # Create your views here.
@@ -74,3 +79,29 @@ def register(request):
                   context={'user_form': user_form,
                            'profile_form': profile_form,
                            'registered': registered})
+
+
+##########################################################################
+#                            LOGIN SECTION                               #
+# View that handles request to See login.html                            #
+##########################################################################
+
+def user_login(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        user = authenticate(username=username, password=password)
+
+        if user:
+            if user.is_active:
+                login(request, user)
+                return HttpResponsePermanentRedirect(reverse('mydb/myvault'))
+            else:
+                return HttpResponse("Account not active")
+        else:
+            print("False Login")
+            return HttpResponse("Invalid Login credentials ")
+
+    else:
+        return render(request, 'mydb/login.html', {})
