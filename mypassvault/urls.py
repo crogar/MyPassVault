@@ -20,7 +20,9 @@ from mydb import views
 
 
 urlpatterns = [
+    url(r'^$', views.index, name='index'),
     url('myvault/', include('mydb.urls')),
-    url(r'^$', views.user_login, name='login'),
+    url(r'user_login', views.user_login, name='login'),
+    url(r'user_logout', views.user_logout, name='logout'),
     path('admin/', admin.site.urls),
 ]

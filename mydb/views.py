@@ -3,7 +3,7 @@ from django.http.request import HttpRequest
 from mydb.models import Account
 from mydb import forms
 from mydb.forms import UserProfileInfoForm, UserForm
-
+from django.contrib import admin
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponsePermanentRedirect, HttpResponse
@@ -11,6 +11,9 @@ from django.contrib.auth import authenticate, login, logout
 
 
 # Create your views here.
+
+def index(request):
+    return render(request, 'mydb/index.html')
 
 
 def front(request):
@@ -96,7 +99,7 @@ def user_login(request):
         if user:
             if user.is_active:
                 login(request, user)
-                return HttpResponsePermanentRedirect(reverse('mydb/myvault'))
+                return HttpResponsePermanentRedirect(reverse('index'))
             else:
                 return HttpResponse("Account not active")
         else:
@@ -105,3 +108,14 @@ def user_login(request):
 
     else:
         return render(request, 'mydb/login.html', {})
+
+
+##########################################################################
+#                            LOGOUT SECTION                               #
+# View that handles request to See logout.html                            #
+##########################################################################
+
+@login_required
+def user_logout(request):
+    logout(request)
+    return HttpResponsePermanentRedirect(reverse('index'))
